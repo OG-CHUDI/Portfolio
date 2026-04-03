@@ -92,15 +92,16 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
+        // @ts-ignore
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
           <motion.div
             initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : {}}
+            animate={isInView ? { scale: 1 } : { scale: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
           >
@@ -122,7 +123,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -197,7 +198,7 @@ export default function Contact() {
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-8"
           >
@@ -258,7 +259,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 10 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     className={`flex items-center gap-3 p-4 rounded-xl glass transition-all duration-300 group ${social.color}`}
                     data-cursor-hover
@@ -274,7 +275,7 @@ export default function Contact() {
             {/* Availability Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="glass rounded-2xl p-6 flex items-center gap-4"
             >
@@ -293,7 +294,7 @@ export default function Contact() {
         {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
           className="mt-32 pt-8 border-t border-white/10"
         >
